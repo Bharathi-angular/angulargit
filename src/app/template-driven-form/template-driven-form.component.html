@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="mt-5 mb-5">Login Form</h2>
+    <form (ngSubmit)="Submit(form)"  #form="ngForm" >
+       <label for="name">Name</label><br>
+       <input type="text" name="name" id="name" ngModel required class="form-control" #name=ngModel>
+       <span *ngIf="!name.valid && name.touched">Name is required</span><br>
+ 
+       <label for="age">Age</label><br>
+       <input type="text" name="age" id="age" ngModel  class="form-control" ><br>
+       
+       <label for="email">Email</label><br>
+       <input type="text" name="email" id="email" ngModel required class="form-control" #email=ngModel>
+       <span *ngIf="!email.valid && email.touched">Mail id is required</span><br>
+ 
+       <label for="country">Country</label><br>
+       <input type="text" name="country" id="country" ngModel class="form-control"><br>
+ 
+       <button class="btn btn-success" >Save</button>
+    </form>
+ 
+    <table class="container" *ngIf="boolean">
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Email</th>
+         <th>Country</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let arr of array">
+         <td>{{arr.name}}</td>
+         <td>{{arr.age}}</td>
+         <td>{{arr.email}}</td>
+         <td>{{arr.country}}</td>
+       </tr>
+     </tbody>
+   </table>
+    
+ </div>
